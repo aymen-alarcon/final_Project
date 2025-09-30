@@ -9,6 +9,7 @@ struct clients{
 };
 
 extern struct  clients client[1];
+extern int clientCount;
 
 void addClient();
 void updateClient();

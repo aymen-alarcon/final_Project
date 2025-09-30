@@ -6,19 +6,14 @@
 
 void mainmenu(){
     int choice;
-    int size;
     do
     {
-        printf("=== SYSTÈME D'ACHAT CLIENT ===");
-        printf("1. to manage the user's profile: ");
-        scanf("%d", &choice);
-        printf("2. to manage the user's balance : ");
-        scanf("%d", &choice);
-        printf("3. to manage the products: ");
-        scanf("%d", &choice);
-        printf("4. to manage the transactions: ");
-        scanf("%d", &choice);
-        printf("5. to see all the statistiques: ");
+        printf("=== SYSTEME D'ACHAT CLIENT ===\n");
+        printf("1. to manage the user's profile: \n");
+        printf("2. to manage the user's balance : \n");
+        printf("3. to manage the products: \n");
+        printf("4. to manage the transactions: \n");
+        printf("5. to see all the statistiques: \n");
         scanf("%d", &choice);
         
         switch (choice)
@@ -26,28 +21,26 @@ void mainmenu(){
             case 1 :
                 do
                 {
-                    if (size < 1)
+                    if (clientCount < 1)
                     {
-                        printf("1. to create a profile: ");
-                        scanf("%d", &choice);
+                        printf("1. to create a profile: \n");
+                        printf("2. to update a profile: \n");
+                        printf("3. to display the profile: \n");
+                        scanf("%d", &choice);   
+                        switch (choice)
+                        {
+                            case 1 :
+                                addClient();
+                            break;
+                            case 2 :
+                                updateClient();
+                            break;
+                            case 3 :
+                                displayClient();
+                        break;
+                        default:
+                        break;
                     }
-                    printf("2. to update a profile: ");
-                    scanf("%d", &choice);
-                    printf("3. to display the profile: ");
-                    scanf("%d", &choice);   
-                    switch (choice)
-                    {
-                        case 1 :
-                            addClient();
-                        break;
-                        case 2 :
-                            updateClient();
-                        break;
-                        case 3 :
-                            displayClient();
-                    break;
-                    default:
-                    break;
                 }             
                 } while (choice != 0);
             break;
@@ -57,15 +50,15 @@ void mainmenu(){
                     switch (choice)
                     {
                     case 1 :
-                        printf("1. to display the user's balance: ");
+                        printf("1. to display the user's balance: \n");
                         scanf("%d", &choice);
                     break;
                     case 2 :
-                        printf("2. to add more balance: ");
+                        printf("2. to add more balance: \n");
                         scanf("%d", &choice);
                     break;
                     case 3 :
-                        printf("2. to add more balance: ");
+                        printf("2. to add more balance: \n");
                         scanf("%d", &choice);
                     break;
                     switch (choice)

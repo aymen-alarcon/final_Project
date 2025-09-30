@@ -1,1 +1,7 @@
-#include 
+void addBalance(){
+
+} 
+
+void displayUserBalance(){
+    
+}
