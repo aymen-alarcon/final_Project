@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "gestion_solde.h": "c",
+        "stdio.h": "c"
+    }
+}
