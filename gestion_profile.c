@@ -1,5 +1,4 @@
 #include "gestion_profile.h"
-#include "menu.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -18,12 +17,20 @@ void addClient(){
 }
 
 void updateClient(){
+    displayClient();
 
+    printf("Enter the new first name: ");
+    scanf("%s", client[0].firstname);
+    printf("Enter the new last name: ");
+    scanf("%s", client[0].lastname);
+    sprintf(client[0].email, "%s.%s@gmail.com", client[0].firstname, client[0].lastname);
+
+    displayClient();
 }
 
 void displayClient() {
     for (int i = 0; i < clientCount; i++) {
-        printf("Client #%d: %s %s - %s\n", 
+        printf("Client #%d: %s %s with email %s\n", 
                client[i].id, 
                client[i].firstname, 
                client[i].lastname, 

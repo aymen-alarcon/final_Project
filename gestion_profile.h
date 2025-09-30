@@ -1,6 +1,6 @@
 #ifndef GESTION_PROFILE_H
 #define GESTION_PROFILE_H
-#include <stdio.h>
+
 struct clients{
     int id;
     char firstname[30];
