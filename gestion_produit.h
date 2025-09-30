@@ -13,5 +13,6 @@ extern struct Produit products[10];
 
 void displayProducts();
 void searchProduct();
-void sortProductsMenu();
+void sortProductsMenuByName();
+void sortProductsMenuByNumbers();
 void displayAllProductsInfo();

@@ -7,7 +7,6 @@ void mainmenu()
 {
     int choice;      
     int subchoice; 
-
     do
     {
         printf("\n=== SYSTEME D'ACHAT CLIENT ===\n");
@@ -94,8 +93,21 @@ void mainmenu()
                     searchProduct();
                     break;
                 case 3:
-                    sortProductsMenu();
-                    break;
+                    printf("1. To sort them out by price\n");
+                    printf("2. To sort them out by name\n");
+                    scanf("%d", &subchoice);
+                    switch (subchoice)
+                    {
+                        case 1 :
+                            sortProductsMenuByNumbers();
+                        break;
+                        case 2 :
+                            sortProductsMenuByName();
+                        break;
+                        default: 
+                        break;
+                    }
+                break;
                 case 4:
                     displayAllProductsInfo();
                     break;
