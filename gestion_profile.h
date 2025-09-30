@@ -6,6 +6,7 @@ struct clients{
     char firstname[30];
     char lastname[30];
     char email[30];
+    float balance;
 };
 
 extern struct  clients client[1];

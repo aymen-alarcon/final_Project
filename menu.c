@@ -2,6 +2,7 @@
 #include "gestion_produit.h"
 #include "gestion_profile.h"
 #include "gestion_solde.h"
+#include "gestion_achat.h"
 
 void mainmenu()
 {
@@ -52,24 +53,26 @@ void mainmenu()
         case 2:
             do
             {
-                printf("\n--- User Balance Menu ---\n");
-                printf("1. Display balance\n");
-                printf("2. Add balance\n");
-                printf("0. Back to main menu\n");
-                printf("Enter your choice: ");
-                scanf("%d", &subchoice);
+                if (clientCount != 0){
+                    printf("\n--- User Balance Menu ---\n");
+                    printf("1. Display balance\n");
+                    printf("2. Add balance\n");
+                    printf("0. Back to main menu\n");
+                    printf("Enter your choice: ");
+                    scanf("%d", &subchoice);
 
-                switch (subchoice)
-                {
-                case 1:
-                    displayUserBalance();
-                    break;
-                case 2:
-                    addBalance();
-                    break;
-                default:
-                    break;
-                }
+                    switch (subchoice)
+                    {
+                        case 1:
+                            displayUserBalance();
+                            break;
+                        case 2:
+                            addBalance();
+                            break;
+                        default:
+                        break;
+                    }
+                }               
             } while (subchoice != 0);
             break;
         case 3: 
