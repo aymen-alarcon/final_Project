@@ -4,6 +4,10 @@
 #include "gestion_solde.h"
 #include "gestion_achat.h"
 #include "stats.h"
+#define YEL "\e[0;33m"
+#define reset "\e[0m"
+#define RED "\e[0;31m"
+#define BGRN "\e[1;32m"
 
 void mainmenu()
 {
@@ -11,13 +15,13 @@ void mainmenu()
     int subchoice; 
     do
     {
-        printf("\n=== SYSTEME D'ACHAT CLIENT ===\n");
-        printf("1. Manage user's profile\n");
-        printf("2. Manage user's balance\n");
-        printf("3. Manage products\n");
-        printf("4. perform a transactions\n");
-        printf("5. View statistics\n");
-        printf("0. Exit\n");
+        printf(BGRN "\n=== SYSTEME D'ACHAT CLIENT ===\n" reset);
+        printf(YEL "1. Manage user's profile\n" reset);
+        printf(YEL "2. Manage user's balance\n" reset);
+        printf(YEL "3. Manage products\n" reset);
+        printf(YEL "4. perform a transactions\n" reset);
+        printf(YEL "5. View statistics\n" reset);
+        printf(RED "0. Exit\n" reset);
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
@@ -26,11 +30,11 @@ void mainmenu()
         case 1:
             do
             {
-                printf("\n--- User Profile Menu ---\n");
-                printf("1. Create profile\n");
-                printf("2. Update profile\n");
-                printf("3. Display profile\n");
-                printf("0. Back to main menu\n");
+                printf(BGRN "\n--- User Profile Menu ---\n" reset);
+                printf(YEL "1. Create profile\n" reset);
+                printf(YEL "2. Update profile\n" reset);
+                printf(YEL "3. Display profile\n" reset);
+                printf(RED "0. Back to main menu\n" reset);
                 printf("Enter your choice: ");
                 scanf("%d", &subchoice);
 
@@ -54,10 +58,10 @@ void mainmenu()
             do
             {
                 if (clientCount != 0){
-                    printf("\n--- User Balance Menu ---\n");
-                    printf("1. Display balance\n");
-                    printf("2. Add balance\n");
-                    printf("0. Back to main menu\n");
+                    printf(BGRN "\n--- User Balance Menu ---\n" reset);
+                    printf(YEL "1. Display balance\n" reset);
+                    printf(YEL "2. Add balance\n" reset);
+                    printf(RED "0. Back to main menu\n" reset);
                     printf("Enter your choice: ");
                     scanf("%d", &subchoice);
 
@@ -81,12 +85,12 @@ void mainmenu()
         case 3: 
             do
             {
-                printf("\n--- Products Menu ---\n");
-                printf("1. Display products\n");
-                printf("2. Search product\n");
-                printf("3. Sort products\n");
-                printf("4. Display all product info\n");
-                printf("0. Back to main menu\n");
+                printf(BGRN "\n--- Products Menu ---\n" reset);
+                printf(YEL "1. Display products\n" reset);
+                printf(YEL "2. Search product\n" reset);
+                printf(YEL "3. Sort products\n" reset);
+                printf(YEL "4. Display all product info\n" reset);
+                printf(RED "0. Back to main menu\n" reset);
                 printf("Enter your choice: ");
                 scanf("%d", &subchoice);
 
@@ -99,8 +103,11 @@ void mainmenu()
                     searchProduct();
                     break;
                 case 3:
-                    printf("1. To sort them out by price\n");
-                    printf("2. To sort them out by name\n");
+                    printf(BGRN "\n--- Choose a sorting method ---\n" reset);
+                    printf(YEL "1. To sort them out by price\n" reset);
+                    printf(YEL "2. To sort them out by name\n" reset);
+                    printf(YEL "3. To sort them out by category\n" reset);
+                    printf(RED "0. Back to main menu\n" reset);
                     scanf("%d", &subchoice);
                     switch (subchoice)
                     {
@@ -109,6 +116,9 @@ void mainmenu()
                         break;
                         case 2 :
                             sortProductsMenuByName();
+                        break;
+                        case 3 :
+                            sortProductsMenuByCategory();
                         break;
                         default: 
                         break;
@@ -126,7 +136,26 @@ void mainmenu()
             buyProduct();
         break;
         case 5:
-            viewStatistics();
+            do
+            {   
+                printf(BGRN "\n--- Statistics Menu ---\n" reset);
+                printf(YEL "1. View current stock statistics\n" reset);
+                printf(YEL "2. View purchase history statistics\n" reset);
+                printf(RED "0. Back to main menu\n" reset);
+                printf("Enter your choice: ");
+                scanf("%d", &subchoice);
+                switch (subchoice)
+                {
+                case 1 :
+                    viewStatistics();
+                    break;
+                case 2 :
+                    historyStatistics();
+                    break;
+                default:
+                    break;
+                }
+            } while (subchoice != 0);       
         break;
         case 0:
             printf("Exiting program...\n");

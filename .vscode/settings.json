@@ -4,6 +4,9 @@
         "stdio.h": "c",
         "gestion_produit.h": "c",
         "gestion_profile.h": "c",
-        "stats.h": "c"
+        "stats.h": "c",
+        "menu.h": "c",
+        "connection.h": "c",
+        "sqlite3.h": "c"
     }
 }

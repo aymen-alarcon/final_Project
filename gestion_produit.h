@@ -17,3 +17,4 @@ void searchProduct();
 void sortProductsMenuByName();
 void sortProductsMenuByNumbers();
 void displayAllProductsInfo();
+void sortProductsMenuByCategory();

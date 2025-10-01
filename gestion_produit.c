@@ -46,7 +46,7 @@ void searchProduct(){
         }
 }
 void sortProductsMenuByNumbers(){
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 9; i++)
         {
                 for (int a = i + 1; a < 10; a++)
                 {
@@ -64,8 +64,27 @@ void sortProductsMenuByNumbers(){
         }
 }
 
+void sortProductsMenuByCategory(){
+        for (int i = 0; i < 9; i++)
+        {
+                for (int a = i + 1; a < 10; a++)
+                {
+                        if (strcmp(products[i].categorie, products[a].categorie) > 0)
+                        {
+                                struct Produit temp = products[i];
+                                products[i] = products[a];
+                                products[a] = temp;
+                        }                                
+                }
+        }
+                
+        for (int b = 0; b < 10; b++) {
+                printf("ID: %d\nNom: %s\nPrix: %.2f\nStock: %d\nCategory: %s\n\n", products[b].idProduit, products[b].nom, products[b].prix, products[b].stock, products[b].categorie);
+        }
+}
+
 void sortProductsMenuByName(){
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 9; i++)
         {
                 for (int a = i + 1; a < 10; a++)
                 {
@@ -76,8 +95,12 @@ void sortProductsMenuByName(){
                                 products[a] = temp;
                         }                                
                 }
+        }
+        for (int i = 0; i < 10; i++)
+        {
                 printf("ID: %d\nNom: %s\nPrix: %.2f\nStock: %d\n\n", products[i].idProduit, products[i].nom, products[i].prix, products[i].stock);
         }
+        
 }
 
 void displayAllProductsInfo(){
