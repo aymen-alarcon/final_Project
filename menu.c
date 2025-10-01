@@ -48,8 +48,7 @@ void mainmenu()
                     break;
                 }
             } while (subchoice != 0);
-            break;
-
+        break;
         case 2:
             do
             {
@@ -72,9 +71,12 @@ void mainmenu()
                         default:
                         break;
                     }
-                }               
+                }else {
+                    printf("You need to create a profile first.\n");
+                    subchoice = 0;
+                }            
             } while (subchoice != 0);
-            break;
+        break;
         case 3: 
             do
             {
@@ -120,55 +122,17 @@ void mainmenu()
             } while (subchoice != 0);
         break;
         case 4:
-            do
-            {
-                printf("\n--- Transactions Menu ---\n");
-                printf("1. Sélection de produit : Choix parmi le catalogue disponible\n");
-                printf("2. Vérifications : Contrôle du stock et adéquation solde/prix\n");
-                printf("3. Paiement : Débit automatique du solde virtuel\n");
-                printf("4. Mise à jour : Actualisation du stock produit et solde client\n");
-                printf("5. Confirmation : Message de succès ou d'échec de la transaction\n");
-                printf("0. Back to main menu\n");
-                printf("Enter your choice: ");
-                scanf("%d", &subchoice);
-
-                switch (subchoice)
-                {
-                case 1:
-                    //selectProduct();      
-                    break;
-                case 2:
-                    //checkStockAndBalance();
-                    break;
-                case 3:
-                    //processPayment();     
-                    break;
-                case 4:
-                    //updateStockAndBalance();  
-                    break;
-                case 5:
-                    //transactionConfirmation(); 
-                    break;
-                case 0:
-                    //printf("Returning to main menu...\n");
-                    break;
-                default:
-                    printf("Invalid choice. Try again.\n");
-                    break;
-                }
-            } while (subchoice != 0);
+            buyproduct();
         break;
         case 5:
             //viewStatistics();
-            break;
-
+        break;
         case 0:
             printf("Exiting program...\n");
-            break;
-
+        break;
         default:
             printf("Invalid choice. Try again.\n");
-            break;
+        break;
         }
 
     } while (choice != 0);
