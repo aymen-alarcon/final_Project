@@ -3,6 +3,7 @@
         "gestion_solde.h": "c",
         "stdio.h": "c",
         "gestion_produit.h": "c",
-        "gestion_profile.h": "c"
+        "gestion_profile.h": "c",
+        "stats.h": "c"
     }
 }

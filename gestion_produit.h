@@ -1,3 +1,4 @@
+#define GESTION_PRODUIT_H
 #include <stdio.h>
 
 struct Produit{

@@ -3,6 +3,7 @@
 #include "gestion_profile.h"
 #include "gestion_solde.h"
 #include "gestion_achat.h"
+#include "stats.h"
 
 void mainmenu()
 {
@@ -122,16 +123,17 @@ void mainmenu()
             } while (subchoice != 0);
         break;
         case 4:
-            buyproduct();
+            buyProduct();
         break;
         case 5:
-            //viewStatistics();
+            viewStatistics();
         break;
         case 0:
             printf("Exiting program...\n");
         break;
         default:
             printf("Invalid choice. Try again.\n");
+            return;
         break;
         }
 
