@@ -11,8 +11,8 @@
 
 void mainmenu()
 {
-    int choice;      
-    int subchoice; 
+    int choice;
+    int subchoice;
     do
     {
         printf(BGRN "\n=== SYSTEME D'ACHAT CLIENT ===\n" reset);
@@ -53,11 +53,12 @@ void mainmenu()
                     break;
                 }
             } while (subchoice != 0);
-        break;
+            break;
         case 2:
             do
             {
-                if (clientCount != 0){
+                if (clientCount != 0)
+                {
                     printf(BGRN "\n--- User Balance Menu ---\n" reset);
                     printf(YEL "1. Display balance\n" reset);
                     printf(YEL "2. Add balance\n" reset);
@@ -67,22 +68,24 @@ void mainmenu()
 
                     switch (subchoice)
                     {
-                        case 1:
-                            displayUserBalance();
-                            break;
-                        case 2:
-                            addBalance();
-                            break;
-                        default:
+                    case 1:
+                        displayUserBalance();
+                        break;
+                    case 2:
+                        addBalance();
+                        break;
+                    default:
                         break;
                     }
-                }else {
+                }
+                else
+                {
                     printf("You need to create a profile first.\n");
                     subchoice = 0;
-                }            
+                }
             } while (subchoice != 0);
-        break;
-        case 3: 
+            break;
+        case 3:
             do
             {
                 printf(BGRN "\n--- Products Menu ---\n" reset);
@@ -111,19 +114,19 @@ void mainmenu()
                     scanf("%d", &subchoice);
                     switch (subchoice)
                     {
-                        case 1 :
-                            sortProductsMenuByNumbers();
+                    case 1:
+                        sortProductsMenuByNumbers();
                         break;
-                        case 2 :
-                            sortProductsMenuByName();
+                    case 2:
+                        sortProductsMenuByName();
                         break;
-                        case 3 :
-                            sortProductsMenuByCategory();
+                    case 3:
+                        sortProductsMenuByCategory();
                         break;
-                        default: 
+                    default:
                         break;
                     }
-                break;
+                    break;
                 case 4:
                     displayAllProductsInfo();
                     break;
@@ -131,20 +134,20 @@ void mainmenu()
                     break;
                 }
             } while (subchoice != 0);
-        break;
+            break;
         case 4:
             buyProduct();
-        break;
+            break;
         case 5:
             viewStatistics();
-        break;
+            break;
         case 0:
             printf("Exiting program...\n");
-        break;
+            break;
         default:
             printf("Invalid choice. Try again.\n");
             return;
-        break;
+            break;
         }
 
     } while (choice != 0);

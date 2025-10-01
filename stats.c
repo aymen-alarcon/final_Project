@@ -1,7 +1,6 @@
 #include "stats.h"
 #include "gestion_produit.h"
 #include <stdio.h>
-#include "sqlite3.h"
 
 
 void viewStatistics() {

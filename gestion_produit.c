@@ -1,31 +1,32 @@
 #include "gestion_produit.h"
 #include <string.h>
 
-
 struct Produit products[10] = {
-        {1, "Ordinateur Portable", "Electronique", 599.99, 5, "Laptop performant 16 Go RAM"},
-        {2, "Smartphone", "Electronique", 299.99, 3, "Telephone Android 128 Go"},
-        {3, "Casque Audio", "Accessoires", 49.99, 5, "Casque sans fil Bluetooth"},
-        {4, "Television 4K", "Electronique", 799.99, 8, "TV UHD 55 pouces"},
-        {5, "Clavier Mecanique", "Accessoires", 89.99, 5, "Clavier RGB retroeclaire"},
-        {6, "Souris Gaming", "Accessoires", 39.99, 4, "Souris ergonomique haute precision"},
-        {7, "Imprimante", "Bureautique", 129.99, 1, "Imprimante Wi-Fi multifonction"},
-        {8, "Disque SSD 1To", "Stockage", 109.99, 10, "Disque SSD rapide pour PC"},
-        {9, "Montre Connectee", "Electronique", 149.99, 8, "Montre intelligente avec capteurs sante"},
-        {10, "Camera de Securite", "Maison", 59.99, 7, "Camera Wi-Fi avec vision nocturne"}
-};
+    {1, "Ordinateur Portable", "Electronique", 599.99, 5, "Laptop performant 16 Go RAM"},
+    {2, "Smartphone", "Electronique", 299.99, 3, "Telephone Android 128 Go"},
+    {3, "Casque Audio", "Accessoires", 49.99, 5, "Casque sans fil Bluetooth"},
+    {4, "Television 4K", "Electronique", 799.99, 8, "TV UHD 55 pouces"},
+    {5, "Clavier Mecanique", "Accessoires", 89.99, 5, "Clavier RGB retroeclaire"},
+    {6, "Souris Gaming", "Accessoires", 39.99, 4, "Souris ergonomique haute precision"},
+    {7, "Imprimante", "Bureautique", 129.99, 1, "Imprimante Wi-Fi multifonction"},
+    {8, "Disque SSD 1To", "Stockage", 109.99, 10, "Disque SSD rapide pour PC"},
+    {9, "Montre Connectee", "Electronique", 149.99, 8, "Montre intelligente avec capteurs sante"},
+    {10, "Camera de Securite", "Maison", 59.99, 7, "Camera Wi-Fi avec vision nocturne"}};
 
-void displayProducts(){
-    for (int i = 0; i < 10; i++) {
-        printf("ID: %d\nNom: %s\nPrix: %.2f\nStock: %d\n\n",
-               products[i].idProduit,
-               products[i].nom,
-               products[i].prix,
-               products[i].stock);
-    }
+void displayProducts()
+{
+        for (int i = 0; i < 10; i++)
+        {
+                printf("ID: %d\nNom: %s\nPrix: %.2f\nStock: %d\n\n",
+                       products[i].idProduit,
+                       products[i].nom,
+                       products[i].prix,
+                       products[i].stock);
+        }
 }
 
-void searchProduct(){
+void searchProduct()
+{
         char search[30];
         printf("Enter product name to search: ");
         scanf("%s", &search);
@@ -45,7 +46,8 @@ void searchProduct(){
                 }
         }
 }
-void sortProductsMenuByNumbers(){
+void sortProductsMenuByNumbers()
+{
         for (int i = 0; i < 9; i++)
         {
                 for (int a = i + 1; a < 10; a++)
@@ -55,16 +57,18 @@ void sortProductsMenuByNumbers(){
                                 struct Produit temp = products[i];
                                 products[i] = products[a];
                                 products[a] = temp;
-                        }                                
+                        }
                 }
         }
-                
-        for (int b = 0; b < 10; b++) {
+
+        for (int b = 0; b < 10; b++)
+        {
                 printf("ID: %d\nNom: %s\nPrix: %.2f\nStock: %d\n\n", products[b].idProduit, products[b].nom, products[b].prix, products[b].stock);
         }
 }
 
-void sortProductsMenuByCategory(){
+void sortProductsMenuByCategory()
+{
         for (int i = 0; i < 9; i++)
         {
                 for (int a = i + 1; a < 10; a++)
@@ -74,16 +78,18 @@ void sortProductsMenuByCategory(){
                                 struct Produit temp = products[i];
                                 products[i] = products[a];
                                 products[a] = temp;
-                        }                                
+                        }
                 }
         }
-                
-        for (int b = 0; b < 10; b++) {
+
+        for (int b = 0; b < 10; b++)
+        {
                 printf("ID: %d\nNom: %s\nPrix: %.2f\nStock: %d\nCategory: %s\n\n", products[b].idProduit, products[b].nom, products[b].prix, products[b].stock, products[b].categorie);
         }
 }
 
-void sortProductsMenuByName(){
+void sortProductsMenuByName()
+{
         for (int i = 0; i < 9; i++)
         {
                 for (int a = i + 1; a < 10; a++)
@@ -93,24 +99,25 @@ void sortProductsMenuByName(){
                                 struct Produit temp = products[i];
                                 products[i] = products[a];
                                 products[a] = temp;
-                        }                                
+                        }
                 }
         }
         for (int i = 0; i < 10; i++)
         {
                 printf("ID: %d\nNom: %s\nPrix: %.2f\nStock: %d\n\n", products[i].idProduit, products[i].nom, products[i].prix, products[i].stock);
         }
-        
 }
 
-void displayAllProductsInfo(){
-        for (int i = 0; i < 10; i++) {
+void displayAllProductsInfo()
+{
+        for (int i = 0; i < 10; i++)
+        {
                 printf("ID: %d\nNom: %s\nCategorie: %s\nPrix: %.2f\nStock: %d\nDescription: %s\n\n",
-                        products[i].idProduit,
-                        products[i].nom,
-                        products[i].categorie,
-                        products[i].prix,
-                        products[i].stock,
-                        products[i].description);
+                       products[i].idProduit,
+                       products[i].nom,
+                       products[i].categorie,
+                       products[i].prix,
+                       products[i].stock,
+                       products[i].description);
         }
 }

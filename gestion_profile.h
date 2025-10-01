@@ -1,7 +1,8 @@
 #ifndef GESTION_PROFILE_H
 #define GESTION_PROFILE_H
 
-struct clients{
+struct clients
+{
     int id;
     char firstname[30];
     char lastname[30];
@@ -9,7 +10,7 @@ struct clients{
     float balance;
 };
 
-extern struct  clients client[1];
+extern struct clients client[1];
 extern int clientCount;
 
 void addClient();

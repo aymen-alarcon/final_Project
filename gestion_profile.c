@@ -5,7 +5,8 @@
 struct clients client[];
 int clientCount = 0;
 
-void addClient(){
+void addClient()
+{
     printf("can you please enter your first name: ");
     scanf("%s", client[clientCount].firstname);
     printf("can you please enter your last name: ");
@@ -16,7 +17,8 @@ void addClient(){
     displayClient();
 }
 
-void updateClient(){
+void updateClient()
+{
     displayClient();
 
     printf("Enter the new first name: ");
@@ -28,12 +30,14 @@ void updateClient(){
     displayClient();
 }
 
-void displayClient() {
-    for (int i = 0; i < clientCount; i++) {
-        printf("Client #%d: %s %s with email %s\n", 
-               client[i].id, 
-               client[i].firstname, 
-               client[i].lastname, 
+void displayClient()
+{
+    for (int i = 0; i < clientCount; i++)
+    {
+        printf("Client #%d: %s %s with email %s\n",
+               client[i].id,
+               client[i].firstname,
+               client[i].lastname,
                client[i].email);
     }
 }
