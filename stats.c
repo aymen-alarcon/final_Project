@@ -30,33 +30,3 @@ void viewStatistics() {
     printf("Number of products with sufficient stock (more than 3): %d\n", sufficientStockCount);
 
 }
-
-int historyStatistics() {
-    sqlite3 *db;
-    sqlite3_stmt *stmt;
-
-    if (sqlite3_open("database.db", &db) != 0) {
-        fprintf(stderr, "Cannot open database: %s\n", sqlite3_errmsg(db));
-        return 1;
-    }
-
-    const char *sql = "SELECT * FROM history;";
-    if (sqlite3_prepare_v2(db, sql, -1, &stmt, NULL) != 0) {
-        fprintf(stderr, "Failed to prepare statement: %s\n", sqlite3_errmsg(db));
-        sqlite3_close(db);
-        return 1;
-    }
-
-    printf("Viewing history statistics...\n");
-    while (sqlite3_step(stmt) == SQLITE_ROW) {
-        printf("ID=%d, Date=%s, ProduitID=%d, Prix=%.2f\n",
-               sqlite3_column_int(stmt, 0),
-               sqlite3_column_text(stmt, 1),
-               sqlite3_column_int(stmt, 2),
-               sqlite3_column_double(stmt, 3));
-    }
-
-    sqlite3_finalize(stmt);
-    sqlite3_close(db);
-    return 0;
-}

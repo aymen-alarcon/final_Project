@@ -136,26 +136,7 @@ void mainmenu()
             buyProduct();
         break;
         case 5:
-            do
-            {   
-                printf(BGRN "\n--- Statistics Menu ---\n" reset);
-                printf(YEL "1. View current stock statistics\n" reset);
-                printf(YEL "2. View purchase history statistics\n" reset);
-                printf(RED "0. Back to main menu\n" reset);
-                printf("Enter your choice: ");
-                scanf("%d", &subchoice);
-                switch (subchoice)
-                {
-                case 1 :
-                    viewStatistics();
-                    break;
-                case 2 :
-                    historyStatistics();
-                    break;
-                default:
-                    break;
-                }
-            } while (subchoice != 0);       
+            viewStatistics();
         break;
         case 0:
             printf("Exiting program...\n");
