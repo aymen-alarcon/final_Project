@@ -17,14 +17,22 @@ void addClient()
     displayClient();
 }
 
-void updateClient()
+void updateClientLastName()
 {
     displayClient();
 
-    printf("Enter the new first name: ");
-    scanf("%s", client[0].firstname);
     printf("Enter the new last name: ");
     scanf("%s", client[0].lastname);
+    sprintf(client[0].email, "%s.%s@gmail.com", client[0].firstname, client[0].lastname);
+
+    displayClient();
+}
+
+void updateClientFirstName()
+{
+    displayClient();
+    printf("Enter the new first name: ");
+    scanf("%s", client[0].firstname);
     sprintf(client[0].email, "%s.%s@gmail.com", client[0].firstname, client[0].lastname);
 
     displayClient();

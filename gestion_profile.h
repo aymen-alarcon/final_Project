@@ -14,7 +14,8 @@ extern struct clients client[1];
 extern int clientCount;
 
 void addClient();
-void updateClient();
+void updateClientFirstName();
+void updateClientLastName();
 void displayClient();
 
 #endif

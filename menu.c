@@ -13,6 +13,7 @@ void mainmenu()
 {
     int choice;
     int subchoice;
+    int updatechoice;
     do
     {
         printf(BGRN "\n=== SYSTEME D'ACHAT CLIENT ===\n" reset);
@@ -37,14 +38,34 @@ void mainmenu()
                 printf(RED "0. Back to main menu\n" reset);
                 printf("Enter your choice: ");
                 scanf("%d", &subchoice);
-
+                
                 switch (subchoice)
                 {
                 case 1:
-                    addClient();
-                    break;
+                addClient();
+                break;
                 case 2:
-                    updateClient();
+                do
+                {
+                    printf(BGRN "\n--- Update Profile Menu ---\n" reset);
+                    printf(YEL "1. Update first name\n" reset);
+                    printf(YEL "2. Update last name\n" reset);
+                    printf(RED "0. Back to main menu\n" reset);
+                    printf("Enter your choice: ");
+                        scanf("%d", &updatechoice);
+                        switch (updatechoice)
+                        {
+                        case 1 :
+                            updateClientFirstName();
+                            break;
+                        case 2 :
+                            updateClientLastName();
+                            break;
+                        
+                        default:
+                            break;
+                        }
+                    } while (updatechoice != 0);               
                     break;
                 case 3:
                     displayClient();

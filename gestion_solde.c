@@ -16,5 +16,5 @@ void addBalance()
 
 void displayUserBalance()
 {
-    printf("New balance: %.2f\n", client[1].balance);
+    printf("Your balance: %.2f\n", client[1].balance);
 }
